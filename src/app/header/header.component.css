@@ -1,0 +1,15 @@
+mat-toolbar{
+    background-color: darkgray;
+}
+
+.spacer{
+    flex: 3 3 auto;
+}
+
+.content{
+    flex: 3 3 auto;
+}
+
+.mini-spacer{
+    flex: 0 0 10px;
+}
