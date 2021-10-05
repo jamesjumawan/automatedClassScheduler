@@ -1,5 +1,23 @@
 mat-toolbar{
-    background-color: darkgray;
+    background-color: rgb(153, 153, 153);
+}
+
+.closedMenu{
+    display: none;
+}
+
+.openedMenu{
+    display: inline;
+}
+
+@media (max-width: 600px){
+    .closedMenu{
+        display: inline;
+    }
+
+    .openedMenu{
+        display: none;
+    }
 }
 
 .spacer{

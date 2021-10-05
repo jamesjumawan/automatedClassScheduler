@@ -1,6 +1,6 @@
 .content{
     padding-top: 15px;
-    flex: 1 1 1200px;
+    width: min(100%, 1200px);
 }
 
 .spacer{
