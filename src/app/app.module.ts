@@ -17,6 +17,13 @@ import { SetupSemComponent } from './setup-sem/setup-sem.component';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { EntitiesCollegesComponent } from './manage-entities/entities-colleges/entities-colleges.component';
+import { EntitiesSemestersComponent } from './manage-entities/entities-semesters/entities-semesters.component';
+import { EntitiesCoursesComponent } from './manage-entities/entities-courses/entities-courses.component';
+import { EntitiesSubjectsComponent } from './manage-entities/entities-subjects/entities-subjects.component';
+import { EntitiesRoomsComponent } from './manage-entities/entities-rooms/entities-rooms.component';
+import { EntitiesEmployeesComponent } from './manage-entities/entities-employees/entities-employees.component';
+import { EntitiesUsersComponent } from './manage-entities/entities-users/entities-users.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { HeaderComponent } from './header/header.component';
     SetupSemComponent,
     SchedulesComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    EntitiesCollegesComponent,
+    EntitiesSemestersComponent,
+    EntitiesCoursesComponent,
+    EntitiesSubjectsComponent,
+    EntitiesRoomsComponent,
+    EntitiesEmployeesComponent,
+    EntitiesUsersComponent
   ],
   imports: [
     BrowserModule,
