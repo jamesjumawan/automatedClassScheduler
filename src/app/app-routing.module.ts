@@ -5,6 +5,7 @@ import { HomeComponent } from "./home/home.component";
 import { ManageEntitiesComponent } from "./manage-entities/manage-entities.component";
 import { SetupSemComponent } from "./setup-sem/setup-sem.component";
 import { SchedulesComponent } from "./schedules/schedules.component";
+import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'schedules',
     component: SchedulesComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

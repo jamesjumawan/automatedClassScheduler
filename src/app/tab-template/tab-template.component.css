@@ -27,3 +27,7 @@ mat-toolbar{
 .card-content{
     padding: 1rem;
 }
+
+.main-content{
+    width: 100%;
+}

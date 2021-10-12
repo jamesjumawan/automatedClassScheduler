@@ -5,11 +5,13 @@ import { Observable } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthenticationService {
     constructor(private http:HttpClient) { }
-    
+
     login(data: any): Observable<any> {
-        console.log("i am server");
-        return this.http.post(`https://stark-oasis-25068.herokuapp.com/users/login`, data);
+      return this.http.post(`https://stark-oasis-25068.herokuapp.com/api/users/login`, data);
+    }
+    getUsers(): Observable<any>{
+      return this.http.get('https://stark-oasis-25068.herokuapp.com/api/users');
     }
 }

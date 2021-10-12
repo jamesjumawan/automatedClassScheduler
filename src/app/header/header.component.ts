@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient,private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.route.navigate(["/"])
+  }
+  
+  isLoggedIn(){
+    return localStorage.getItem('token')!=null;
+  }
+
+  getUsersData(){
+    this.http.get('https://stark-oasis-25068.herokuapp.com/api/users').subscribe(
+        (res) => {
+        console.log(res);
+        },
+        (err) => {
+        console.log(err);
+        return [];
+        }
+    );
   }
 
 }
