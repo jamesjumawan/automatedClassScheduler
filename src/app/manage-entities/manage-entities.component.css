@@ -12,7 +12,7 @@ mat-card{
     padding: 0;
 }
 
-button{
+.gray-button{
     background: gray;
     width: 100%;
 }
@@ -46,7 +46,7 @@ table{
 .popup{
     position: absolute;
     flex: 1 1 50%;
-    width: 75%;
+    width: min(75%, 500px);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

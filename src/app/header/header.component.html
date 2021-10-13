@@ -3,8 +3,8 @@
         &lt;logo&gt;
         <div class="openedMenu">
             <a mat-button [routerLink]="['/home']"     >Home           </a>
-            <a mat-button [routerLink]="['/manage']"   >Manage Entities</a>
-            <a mat-button [routerLink]="['/setup']"    >Setup Semesters</a>
+            <a mat-button *ngIf="isLoggedIn()" [routerLink]="['/manage']"   >Manage Entities</a>
+            <a mat-button *ngIf="isLoggedIn()" [routerLink]="['/setup']"    >Setup Semesters</a>
             <a mat-button [routerLink]="['/schedules']">Schedules      </a>
         </div>
 
@@ -12,8 +12,8 @@
             <button mat-button [matMenuTriggerFor]="menu">Menu</button>
             <mat-menu #menu="matMenu">
                 <a mat-menu-item [routerLink]="['/home']"     >Home           </a>
-                <a mat-menu-item [routerLink]="['/manage']"   >Manage Entities</a>
-                <a mat-menu-item [routerLink]="['/setup']"    >Setup Semesters</a>
+                <a mat-menu-item *ngIf="isLoggedIn()" [routerLink]="['/manage']"   >Manage Entities</a>
+                <a mat-menu-item *ngIf="isLoggedIn()" [routerLink]="['/setup']"    >Setup Semesters</a>
                 <a mat-menu-item [routerLink]="['/schedules']">Schedules      </a>
             </mat-menu>
         </div>

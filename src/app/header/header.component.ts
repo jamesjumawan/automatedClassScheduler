@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from "@angular/common/http";
+import { AuthenticationService } from "../authentication.service";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private route:Router, private authService:AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(["/"])
   }
   
-  isLoggedIn(){
-    return localStorage.getItem('token')!=null;
+  isLoggedIn(): boolean{
+    return this.authService.isLoggedIn();
   }
 }

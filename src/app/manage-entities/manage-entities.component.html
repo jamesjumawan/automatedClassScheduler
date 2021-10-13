@@ -123,7 +123,7 @@ teststst
         </div>
         <div side-content>
           <div>&lt;search bar?&gt;</div>
-          <button mat-button (click)="showNewUserPopup=true">New</button>
+          <button mat-button (click)="showNewUserPopup=true" class="gray-button">New</button>
         </div>
         <div main-title>
           Results
@@ -156,7 +156,12 @@ teststst
             </ng-container>
           
             <tr mat-header-row *matHeaderRowDef="usersRowDef"></tr>
-            <tr mat-row *matRowDef="let row; columns: usersRowDef"></tr>
+            <tr mat-row *matRowDef="let row; columns: usersRowDef" (click)="rowClicked(row)" [matMenuTriggerFor]="menu"></tr>
+            
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="editUser()">Edit</button>
+              <button mat-menu-item (click)="deleteUser()">Delete</button>
+            </mat-menu>
           </table>
           
           
@@ -184,21 +189,17 @@ teststst
       
       <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="newUserForm" (ngSubmit)="newUserProcess()">
         <mat-form-field>
-          <input matInput placeholder="First Name" formControlName="first_name">
+          <input matInput maxlength="20" placeholder="First Name" formControlName="first_name">
         </mat-form-field>
-        <br>
         <mat-form-field>
-          <input matInput placeholder="Middle Name" formControlName="middle_name">
+          <input matInput maxlength="20" placeholder="Middle Name" formControlName="middle_name">
         </mat-form-field>
-        <br>
         <mat-form-field>
-          <input matInput placeholder="Last Name" formControlName="last_name">
+          <input matInput maxlength="20" placeholder="Last Name" formControlName="last_name">
         </mat-form-field>
-        <br>
         <mat-form-field>
-          <input matInput placeholder="Username" formControlName="username">
+          <input matInput maxlength="20" placeholder="Username" formControlName="username">
         </mat-form-field>
-        <br>
         <mat-form-field>
           <input matInput type="password" placeholder="Password" formControlName="password">
         </mat-form-field>
@@ -206,7 +207,7 @@ teststst
           <input matInput placeholder="Role" formControlName="role">
         </mat-form-field>
         <br>
-        <button mat-raised-button type="submit">Login</button>
+        <button mat-raised-button type="submit">Submit</button>
       </form>
     </mat-card>
   </div>
