@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
 import { AuthenticationService } from "./../authentication.service";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 export interface Users {
   id: number;
   name: string;
-  username: number;
-  role: number;
+  username: string;
+  role: string;
   active: string;
 }
 
@@ -16,11 +16,21 @@ export interface Users {
   styleUrls: ['./manage-entities.component.css']
 })
 export class ManageEntitiesComponent implements OnInit {
-
-  public usersTableReady = false;
-
+  
   usersRowDef: string[] = ['id', 'name', 'username', 'role', 'active'];
   usersData = [];
+  
+  newUserForm = new FormGroup({
+    first_name: new FormControl(''),
+    middle_name: new FormControl(''),
+    last_name: new FormControl(''),
+    username: new FormControl(''),
+    password: new FormControl(''),
+    role: new FormControl('')
+  });
+
+  public usersTableReady = false;
+  public showNewUserPopup = false;
 
   constructor(private authService:AuthenticationService) {
   }
@@ -29,17 +39,28 @@ export class ManageEntitiesComponent implements OnInit {
     this.getUsers();
   }
   
-
   getUsers(){
     this.authService.getUsers().subscribe(
         (res) => {
-        this.usersData = res['data'];
+          this.usersData = res['data'];
         },
         (err) => {
-        console.log(err);
-        this.usersData = [];
+          console.log(err);
+          this.usersData = [];
         }
     );
     this.usersTableReady = true;
+  }
+
+  newUserProcess(){
+    if(this.newUserForm.valid){
+      this.authService.newUser(this.newUserForm.value).subscribe(
+        (res) => {
+          if(res.success){
+            this.showNewUserPopup = false;
+          }
+        }
+      )
+    }
   }
 }

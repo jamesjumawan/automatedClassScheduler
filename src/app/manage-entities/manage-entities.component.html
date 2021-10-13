@@ -122,13 +122,14 @@ teststst
           Users
         </div>
         <div side-content>
-          &lt;to be filled&gt;
+          <div>&lt;search bar?&gt;</div>
+          <button mat-button (click)="showNewUserPopup=true">New</button>
         </div>
         <div main-title>
           Results
         </div>
         <div main-content>
-          <table mat-table [dataSource]="usersData" *ngIf="usersTableReady">
+          <table mat-table [dataSource]="usersData" *ngIf="usersTableReady" class="mat-elevation-z1">
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef> ID </th>
               <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -166,3 +167,46 @@ teststst
   <!-- ------------------------------------------------------------------------ -->
   
   </mat-tab-group>
+
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+
+  <div *ngIf="showNewUserPopup" class="popup-wrapper">
+    <div (click)="showNewUserPopup=!showNewUserPopup" class="popup-backdrop">
+
+    </div>
+    
+    <mat-card class="popup">
+      <mat-toolbar>
+        New User
+      </mat-toolbar>
+      
+      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="newUserForm" (ngSubmit)="newUserProcess()">
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="first_name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Middle Name" formControlName="middle_name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" formControlName="last_name">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Role" formControlName="role">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button type="submit">Login</button>
+      </form>
+    </mat-card>
+  </div>

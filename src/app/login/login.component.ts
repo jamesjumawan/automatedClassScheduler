@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-    formGroup = new FormGroup({
+    loginForm = new FormGroup({
         username: new FormControl('', [Validators.required]),
         password: new FormControl('', [Validators.required])
     });
@@ -22,17 +22,17 @@ export class LoginComponent implements OnInit {
     }
 	
     loginProcess(){
-        if (this.formGroup.valid) {
-            this.authService.login(this.formGroup.value).subscribe(
-                    (result) => {
-                        if (result.success) {
-                        localStorage.setItem('token', result['token']);
+        if (this.loginForm.valid) {
+            this.authService.login(this.loginForm.value).subscribe(
+                (res) => {
+                    if (res.success) {
+                        localStorage.setItem('token', res['token']);
                         this.route.navigate(["/"]);
-                        } else {
-                        alert(result.message);
-                        }
+                    } else {
+                        alert(res.message);
                     }
-                );
+                }
+            );
         }
     }
 }

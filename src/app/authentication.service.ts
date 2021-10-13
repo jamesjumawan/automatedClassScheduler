@@ -14,4 +14,7 @@ export class AuthenticationService {
     getUsers(): Observable<any>{
       return this.http.get('https://stark-oasis-25068.herokuapp.com/api/users');
     }
+    newUser(data: any): Observable<any>{
+      return this.http.post('https://stark-oasis-25068.herokuapp.com/api/users', data);
+    }
 }

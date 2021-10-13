@@ -22,17 +22,4 @@ export class HeaderComponent implements OnInit {
   isLoggedIn(){
     return localStorage.getItem('token')!=null;
   }
-
-  getUsersData(){
-    this.http.get('https://stark-oasis-25068.herokuapp.com/api/users').subscribe(
-        (res) => {
-        console.log(res);
-        },
-        (err) => {
-        console.log(err);
-        return [];
-        }
-    );
-  }
-
 }

@@ -16,6 +16,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTableModule } from "@angular/material/table";
+import { MatDialogModule } from "@angular/material/dialog";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageEntitiesComponent } from './manage-entities/manage-entities.component';
@@ -36,7 +37,7 @@ import { AuthInterceptorService } from "./auth-interceptor.service";
     HomeComponent,
     HeaderComponent,
     TabTemplateComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,8 @@ import { AuthInterceptorService } from "./auth-interceptor.service";
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

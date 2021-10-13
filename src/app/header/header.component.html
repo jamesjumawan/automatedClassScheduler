@@ -32,7 +32,6 @@
             <mat-menu #account="matMenu">
                 <a mat-menu-item *ngIf="!isLoggedIn()" [routerLink]="['/login']">Login</a>
                 <a mat-menu-item *ngIf="isLoggedIn()" (click)="logout()">Log Out</a>
-                <button (click)="getUsersData()">test</button>
             </mat-menu>
         </div>
     </div>
