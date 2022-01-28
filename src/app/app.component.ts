@@ -8,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
 
   ngOnInit(): void{
-    console.log("app component on init log");
-    
   }
 
   isLoggedIn(){
-    return localStorage.getItem('token')!=null;
+    // return localStorage.getItem('token')!=null;
+    return true;
   }
 }

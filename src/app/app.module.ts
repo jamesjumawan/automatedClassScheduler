@@ -17,6 +17,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTableModule } from "@angular/material/table";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatSelectModule } from "@angular/material/select";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageEntitiesComponent } from './manage-entities/manage-entities.component';
@@ -59,7 +61,9 @@ import { AuthInterceptorService } from "./auth-interceptor.service";
     MatInputModule,
     MatIconModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
