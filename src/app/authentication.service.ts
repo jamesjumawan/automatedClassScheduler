@@ -15,15 +15,14 @@ export class AuthenticationService {
 
 
     isLoggedIn(): boolean{
-      // var token = localStorage.getItem('token');
-      // if(token != null){
-      //   var expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
-      //   return (Math.floor((new Date).getTime() / 1000)) < expiry;
-      // }
-      // else{
-      //   return false;
-      // }
-      return true;
+      var token = localStorage.getItem('token');
+      if(token != null){
+        var expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+        return (Math.floor((new Date).getTime() / 1000)) < expiry;
+      }
+      else{
+        return false;
+      }
     }
 
 
@@ -41,5 +40,9 @@ export class AuthenticationService {
     }
     updateUser(data:any): Observable<any>{
       return this.http.patch(baseurl + 'users', data);
+    }
+
+    getInstructors(): Observable<any>{
+      return this.http.get(baseurl + 'instructors');
     }
 }

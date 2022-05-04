@@ -1,15 +1,19 @@
-::ng-deep :root{
-    --toolbar: rgb(184, 184, 184);
-}
+
 
 mat-card{
     padding:0;
 }
 
 mat-toolbar{
-    background-color: var(--toolbar);
+    background-color: #424242;
     font-size: 1rem;
     height: 3rem;
+    color: #b3b3b3
+}
+
+mat-card>div{
+    background-color: #161616;
+    color: aliceblue;
 }
 
 .card{

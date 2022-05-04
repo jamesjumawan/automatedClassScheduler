@@ -1,5 +1,6 @@
 mat-toolbar{
-    background-color: rgb(153, 153, 153);
+    background-color: #424242;
+    color: aliceblue;
 }
 
 .closedMenu{

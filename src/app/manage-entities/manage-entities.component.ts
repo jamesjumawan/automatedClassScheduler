@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "./../authentication.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
+import {
+  USER,
+  INSTRUCTOR
+} from '../types';
+
 export interface Users {
   id: number;
   name: string;
@@ -17,7 +22,8 @@ export interface Users {
 export class ManageEntitiesComponent implements OnInit {
   
   usersRowDef: string[] = ['id', 'name', 'username', 'active'];
-  usersData = [];
+  usersData: USER[] = [];
+  instructorsData: INSTRUCTOR[] = [];
   
   newUserForm = new FormGroup({
     first_name: new FormControl('', [Validators.required, Validators.maxLength(20)]),
@@ -48,7 +54,7 @@ export class ManageEntitiesComponent implements OnInit {
   });
 
   public usersTableReady = false;
-  public showNewUserPopup = false;
+  public showNewUserPopup = true;                                                       // !!
   public showEditUserPopup = false;
 
   row!: Users;
@@ -58,12 +64,27 @@ export class ManageEntitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+    this.getInstructors();
+  }
+
+  getInstructors(){
+    this.authService.getInstructors().subscribe(
+        (res) => {
+          this.instructorsData = res['data'];
+          console.log(this.instructorsData);
+        },
+        (err) => {
+          console.log(err);
+          this.instructorsData = [];
+        }
+    );
   }
   
   getUsers(){
     this.authService.getUsers().subscribe(
         (res) => {
           this.usersData = res['data'];
+          console.log(this.usersData);
         },
         (err) => {
           console.log(err);
@@ -119,5 +140,17 @@ export class ManageEntitiesComponent implements OnInit {
 	  
 	  console.log('here3');
     }
+  }
+
+  instructorNameUtil(id:number){
+    var _inst = this.instructorsData.find(
+      data => data.id === id
+    );
+    
+    if(_inst){
+      console.log(_inst);
+      return _inst.last_name + ", " + _inst.first_name;
+    }
+    return "";
   }
 }

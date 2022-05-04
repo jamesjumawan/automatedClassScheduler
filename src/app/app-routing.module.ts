@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 import { HomeComponent } from "./home/home.component";
 import { ManageEntitiesComponent } from "./manage-entities/manage-entities.component";
@@ -19,11 +20,13 @@ const routes: Routes = [
   },
   {
     path: 'manage',
-    component: ManageEntitiesComponent
+    component: ManageEntitiesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'setup',
-    component: SetupSemComponent
+    component: SetupSemComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'schedules',

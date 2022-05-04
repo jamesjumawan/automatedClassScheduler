@@ -3,7 +3,6 @@ mat-tab-group{
 }
 
 mat-toolbar{
-    background: gray;
     font-size: 1rem;
     height: 3rem;
 }
@@ -18,7 +17,12 @@ mat-card{
 }
 
 table{
+    background-color: #424242;
     width: 100%;
+}
+
+th, td{
+    color: #b3b3b3;
 }
 
 .spacer{
@@ -55,4 +59,15 @@ table{
 
 form{
     padding: 1em;
+}
+
+form > div {
+    width: 100%;
+    flex: 3 3 auto;
+}
+
+form > div > div{
+    width: 100%;
+    flex: 3 3 auto;
+    padding: 5px;
 }
