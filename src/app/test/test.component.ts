@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "./../authentication.service";
 
@@ -34,6 +35,7 @@ export class TestComponent implements OnInit {
     this.waiting = true;
     this.data = null;
     this.clear();
+    this.clearDropDown()
     this.authService.generate().subscribe(
       (res) => {
         this.info = res['data'].data
@@ -53,6 +55,7 @@ export class TestComponent implements OnInit {
     this.waiting = true;
     this.data = null;
     this.clear();
+    this.clearDropDown();
     this.authService.generateReal().subscribe(
       (res) => {
         this.info = res['data'].data
@@ -207,21 +210,26 @@ export class TestComponent implements OnInit {
           }
         }
       }
+    }
+  }
+
+  clearDropDown(){
+    if(this.table && this.instructorInput && this.roomInput && this.sectionInput){
 
       let child = this.instructorInput.lastElementChild; 
       while (child) {
-          this.instructorInput.removeChild(child);
-          child = this.instructorInput.lastElementChild;
+        this.instructorInput.removeChild(child);
+        child = this.instructorInput.lastElementChild;
       }
       child = this.sectionInput.lastElementChild; 
       while (child) {
-          this.sectionInput.removeChild(child);
-          child = this.sectionInput.lastElementChild;
+        this.sectionInput.removeChild(child);
+        child = this.sectionInput.lastElementChild;
       }
       child = this.roomInput.lastElementChild; 
       while (child) {
-          this.roomInput.removeChild(child);
-          child = this.roomInput.lastElementChild;
+        this.roomInput.removeChild(child);
+        child = this.roomInput.lastElementChild;
       }
     }
   }
