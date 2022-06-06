@@ -7,6 +7,7 @@ import { ManageEntitiesComponent } from "./manage-entities/manage-entities.compo
 import { SetupSemComponent } from "./setup-sem/setup-sem.component";
 import { SchedulesComponent } from "./schedules/schedules.component";
 import { LoginComponent } from "./login/login.component";
+import { TestComponent } from "./test/test.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'test',
+    component: TestComponent
   }
 ];
 

@@ -1,0 +1,144 @@
+
+<span><mat-spinner *ngIf="this.waiting"></mat-spinner></span>
+<div>
+    <!-- <button (click)="generateProc()">POST TEST</button> -->
+    <button (click)="generateReal()">Generate</button>
+    <span *ngIf="this.data">Data ready</span>
+</div>
+
+<div>
+    <!-- <input type="text" id="instructorInput"> -->
+    <select id="instructorInput">
+    </select>
+    <button (click)="setInstructor()" *ngIf="this.data">set instructor</button>
+    <button (click)="setInstructor()" disabled="true" *ngIf="!this.data">set instructor</button>
+</div>
+<div>
+    <!-- <input type="text" id="sectionInput"> -->
+    <select id="sectionInput">
+    </select>
+    <button (click)="setSection()" *ngIf="this.data">set section</button>
+    <button (click)="setSection()" disabled="true" *ngIf="!this.data">set section</button>
+</div>
+<div>
+    <!-- <input type="text" id="roomInput"> -->
+    <select id="roomInput">
+    </select>
+    <button (click)="setRoom()" *ngIf="this.data">set room</button>
+    <button (click)="setRoom()" disabled="true" *ngIf="!this.data">set room</button>
+</div>
+
+<table id="table">
+    <tr>
+        <th></th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+    </tr>
+    <tr>
+        <th>7:30 - 8:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>8:30 - 9:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>9:30 - 10:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>10:30 - 11:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>11:30 - 12:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>12:30 - 1:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>1:30 - 2:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>2:30 - 3:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>3:30 - 4:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>4:30 - 5:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>5:30 - 6:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>6:30 - 7:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>7:30 - 8:30</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>

@@ -1,0 +1,25 @@
+tr{
+    height: 85px;
+    border: 1px solid #ddd;
+}
+tr:first-child{
+    height: 40px;
+}
+tr > *{
+    width: 18%;
+    border: 1px solid #ddd;
+}
+tr > *:first-child{
+    width: 10%;
+}
+tr:nth-child(2n){
+    background-color: #202020;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+mat-spinner{
+    position: fixed;
+    
+}

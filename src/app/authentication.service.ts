@@ -3,8 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 
- const baseurl: string = `https://stark-oasis-25068.herokuapp.com/api/`;
-// const baseurl: string = `http://localhost:3000/api/`;
+//  const baseurl: string = `https://stark-oasis-25068.herokuapp.com/api/`;
+const baseurl: string = `http://localhost:3000/api/`;
 // const baseurl: string = `http://scheduler.rf.gd/api/api/`;
 
 @Injectable({
@@ -44,5 +44,12 @@ export class AuthenticationService {
 
     getInstructors(): Observable<any>{
       return this.http.get(baseurl + 'instructors');
+    }
+
+    generate(): Observable<any>{
+      return this.http.post(baseurl + 'algorithm/test', null);
+    }
+    generateReal(): Observable<any>{
+      return this.http.post(baseurl + 'algorithm', null);
     }
 }

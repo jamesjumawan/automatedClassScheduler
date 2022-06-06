@@ -19,6 +19,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatSelectModule } from "@angular/material/select";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageEntitiesComponent } from './manage-entities/manage-entities.component';
@@ -29,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
 import { TabTemplateComponent } from './tab-template/tab-template.component';
 import { LoginComponent } from './login/login.component';
 import { AuthInterceptorService } from "./auth-interceptor.service";
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { AuthInterceptorService } from "./auth-interceptor.service";
     HeaderComponent,
     TabTemplateComponent,
     LoginComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { AuthInterceptorService } from "./auth-interceptor.service";
     MatTableModule,
     MatDialogModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
